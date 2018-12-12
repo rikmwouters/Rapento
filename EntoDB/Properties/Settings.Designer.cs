@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EntoDB.Properties
+namespace Rapento.Properties
 {
 
 

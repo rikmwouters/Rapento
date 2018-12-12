@@ -1,12 +1,51 @@
-﻿<Window x:Class="EntoDB.MainWindow"
+﻿<Window x:Class="Rapento.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:EntoDB"
+        xmlns:local="clr-namespace:Rapento"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Rapento" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+
+
+        <DockPanel Grid.Row="0"  Grid.ColumnSpan="3">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_New">
+                        <MenuItem Header="_Specimen" x:Name="OpenSpecimenInput" 
+                                  Click="OpenSpecimenInput_Click"/>
+                        <MenuItem Header="_Taxon"/>
+                    </MenuItem>
+                    <MenuItem Header="_Exit" Click="Exit_Click"/>
+                </MenuItem>
+                <MenuItem Header="_Edit">
+                    <MenuItem Header="_Something"/>
+                </MenuItem>
+                <MenuItem Header="_View">
+                    <MenuItem Header="_Distribution map"/>
+                    <MenuItem Header="_Evolutionary tree"/>
+                </MenuItem>
+            </Menu>
+            <StackPanel></StackPanel>
+        </DockPanel>
     </Grid>
+
 </Window>
