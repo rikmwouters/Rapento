@@ -1,17 +1,6 @@
 ﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 
 namespace Rapento
 {
@@ -28,6 +17,18 @@ namespace Rapento
         private void SelectImageButton_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog opDialog = new OpenFileDialog();
+        }
+
+        private void SpecimenInputSubmitButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataAccess data = new DataAccess();
+            data.AddIndividual(GenusBox.Text, SpeciesBox.Text);
+
+            GenusBox.Text = "";
+            SpeciesBox.Text = "";
+            CollectionBox.Text = "";
+            LocalityBox.Text = "";
+            SamplingDateBox.Text = "";
         }
     }
 }
