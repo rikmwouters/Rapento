@@ -19,13 +19,13 @@ namespace Rapento
             }
         }
 
-        public void AddIndividual(string genus, string species)
+        public void AddIndividual(string genus, string species, string collection) //Collectie wordt niet aangemaakt in db???
         {
             using (IDbConnection connection = new SqlConnection(connectionString: Helper.CnnVal("Rapento.Properties.Settings.Database1ConnectionString")))
             {
                 List<Individual> individual = new List<Individual>();
-                individual.Add(new Individual { GivenGenusName = genus, GivenSpeciesName = species });
-                connection.Execute("dbo.AddIndividual @GivenGenusName, @GivenSpeciesName", individual);
+                individual.Add(new Individual { GivenGenusName = genus, GivenSpeciesName = species, GivenCollectionName = collection });
+                connection.Execute("dbo.AddIndividual @GivenGenusName, @GivenSpeciesName, @GivenCollectionName", individual);
             }
         }
     }

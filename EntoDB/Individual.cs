@@ -1,5 +1,7 @@
 ﻿
 
+using System;
+
 namespace Rapento
 {
     class Individual
@@ -12,7 +14,7 @@ namespace Rapento
         public float GivenXcoor { get; set; }
         public float GivenYcoor { get; set; }
         public string GivenLocalityName { get; set; }
-        public string GivenSamplingDate { get; set; }
+        public DateTime GivenSamplingDate { get; set; }
         public string GivenPhysicalSpecimenID { get; set; }
         public string GivenCollectionName { get; set; }
     }
