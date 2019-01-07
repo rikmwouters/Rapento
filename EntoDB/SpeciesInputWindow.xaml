@@ -4,12 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Rapento"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="SpecimenInputWindow" Height="350" Width="600">
+        Title="Specimen input" Height="350" Width="600">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="50"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
@@ -26,6 +30,10 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
@@ -34,18 +42,41 @@
         <TextBox x:Name="GenusBox" Grid.Column="2" Grid.Row="2"/>
         <TextBlock Grid.Column="1" Grid.Row="3" Text="Species: "/>
         <TextBox x:Name="SpeciesBox" Grid.Column="2" Grid.Row="3"/>
-        <TextBlock Grid.Column="1" Grid.Row="4" Text="Collection: "/>
-        <TextBox x:Name="CollectionBox" Grid.Column="2" Grid.Row="4"/>
-        <TextBlock Grid.Column="1" Grid.Row="5" Text="Locality: "/>
-        <TextBox x:Name="LocalityBox" Grid.Column="2" Grid.Row="5"/>
-        <TextBlock Grid.Column="1" Grid.Row="6" Text="Sampling Date: "/>
-        <DatePicker x:Name="SamplingDateBox" Grid.Column="2" Grid.Row="6"/>
-        <TextBlock Grid.Column="1" Grid.Row="7" Text="Image: "/>
+        <TextBlock Grid.Column="1" Grid.Row="4" Text="Determined by: "/>
+        <TextBox x:Name="DeterminedByBox" Grid.Column="2" Grid.Row="4"/>
+        <TextBlock Grid.Column="1" Grid.Row="5" Text="Determination date: "/>
+        <DatePicker x:Name="DeterminationDateBox" Grid.Column="2" Grid.Row="5"/>
+        <TextBlock Grid.Column="5" Grid.Row="11" Text="Image: "/>
         <Button x:Name="SelectImageButton" Content="Browse" 
-                Grid.Column="2" Grid.Row="7" Margin="5" Click="SelectImageButton_Click"/>
-        <TextBlock Grid.Column="3" Grid.Row="7" Text="filename.." 
+                Grid.Column="6" Grid.Row="11" Margin="5" Click="SelectImageButton_Click"/>
+        <TextBlock Grid.Column="6" Grid.Row="12" Text="filename.." 
                    Margin="5"/>
+        <TextBlock Grid.Column="1" Grid.Row="7" Text="Collection: "/>
+        <TextBox x:Name="CollectionBox" Grid.Column="2" Grid.Row="7"/>
+        <TextBlock Grid.Column="1" Grid.Row="8" Text="Physical ID: "/>
+        <TextBox x:Name="PhysicalIDBox" Grid.Column="2" Grid.Row="8"/>
+        <TextBlock Grid.Column="1" Grid.Row="9" Text="Subject type: " Foreground="Red"/>
+        <TextBox x:Name="SubjectTypeBox" Grid.Column="2" Grid.Row="9"/>
+        <TextBlock Grid.Column="1" Grid.Row="10" Text="Subject stage: " Foreground="Red"/>
+        <TextBox x:Name="SubjectStageBox" Grid.Column="2" Grid.Row="10"/>
+        
+        <TextBlock Grid.Column="5" Grid.Row="2" Text="Sampling date: "/>
+        <DatePicker x:Name="SamplingDateBox" Grid.Column="6" Grid.Row="2"/>
+        <TextBlock Grid.Column="5" Grid.Row="3" Text="Sampling time: "/>
+        <xctk:TimePicker Grid.Column="6" Grid.Row="3" />
+        <TextBlock Grid.Column="5" Grid.Row="4" Text="Locality name: "/>
+        <TextBox x:Name="LocalityBox" Grid.Column="6" Grid.Row="4"/>
+        <TextBlock Grid.Column="5" Grid.Row="5" Text="X-Coordinate: "/>
+        <TextBox x:Name="XcoorBox" Grid.Column="6" Grid.Row="5"/>
+        <TextBlock Grid.Column="5" Grid.Row="6" Text="Y-Coordinate: "/>
+        <TextBox x:Name="YcoorBox" Grid.Column="6" Grid.Row="6"/>
+        <TextBlock Grid.Column="5" Grid.Row="7" Text="Host species: "/>
+        <TextBox x:Name="HostSpeciesBox" Grid.Column="6" Grid.Row="7"/>
+        <TextBlock Grid.Column="5" Grid.Row="8" Text="Host genus: "/>
+        <TextBox x:Name="HostGenusBox" Grid.Column="6" Grid.Row="8"/>
+
         <Button x:Name="SpecimenInputSubmitButton" Click="SpecimenInputSubmitButton_Click"
-                Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" Content="Submit"/>
+                Grid.Column="1" Grid.Row="14" Grid.ColumnSpan="2" Content="Submit"/>
+
     </Grid>
 </Window>
