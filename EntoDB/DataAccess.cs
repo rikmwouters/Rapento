@@ -27,5 +27,14 @@ namespace Rapento
                 connection.Execute("dbo.AddIndividual @GivenGenusName = @GivenGenusName, @GivenSpeciesName = @GivenSpeciesName, @GivenCollectionName = @GivenCollectionName", individual);
             }
         }
+
+        public int FindTaxonID(string taxonname)
+        {
+            using (IDbConnection connection = new SqlConnection(connectionString: Helper.CnnVal("Rapento.Properties.Settings.Database1ConnectionString")))
+            {
+                var output = connection.Query<int>("dbo.FindTaxonID @GivenTaxonName", new { GivenTaxonName = taxonname }).ToList();
+                return output.First<int>();
+            }
+        }
     }
 }

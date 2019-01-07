@@ -43,6 +43,12 @@
                     <MenuItem Header="_Distribution map"/>
                     <MenuItem Header="_Evolutionary tree"/>
                 </MenuItem>
+                <MenuItem Header="_Tools">
+                    <MenuItem Header="_Find">
+                        <MenuItem Header="Taxon ID" x:Name="FindTaxonID"
+                                  Click="FindTaxonID_Click"/>
+                    </MenuItem>
+                </MenuItem>
             </Menu>
             <StackPanel></StackPanel>
         </DockPanel>

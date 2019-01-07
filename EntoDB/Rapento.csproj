@@ -78,11 +78,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DataAccess.cs" />
+    <Compile Include="FindTaxonIDWindow.xaml.cs">
+      <DependentUpon>FindTaxonIDWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="Individual.cs" />
     <Compile Include="SpeciesInputWindow.xaml.cs">
       <DependentUpon>SpeciesInputWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="FindTaxonIDWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
