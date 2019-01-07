@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Rapento"
         mc:Ignorable="d"
         Title="FindTaxonIDWindow" Height="222.337" Width="287.426">
-    <Grid>
+    <Grid FocusManager.FocusedElement="{Binding ElementName=TaxonNameBox}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="auto"/>
@@ -26,9 +26,9 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Column="1" Grid.Row="2" Text="Taxon name: "/>
-        <TextBox x:Name="TaxonNameBox" Grid.Column="2" Grid.Row="2"/>
+        <TextBox x:Name="TaxonNameBox" Grid.Column="2" Grid.Row="2" InputScope=""/>
         <Button x:Name="SearchButton" Grid.Column="3" Grid.Row="2" 
-                Content="Search" Click="SearchButton_Click"/>
+                Content="Search" Click="SearchButton_Click" IsDefault="True"/>
         <Label x:Name="ResultLabel" Grid.Column="1" Grid.Row="3"/>
     </Grid>
 </Window>
