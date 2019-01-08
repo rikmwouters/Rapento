@@ -6,17 +6,8 @@ using System.Linq;
 
 namespace Rapento
 {
-    class DataAccess
+    public class DataAccess
     {
-
-        public List<Individual> GetIndividuals()
-        {
-            using (IDbConnection connection = new SqlConnection(connectionString: Helper.CnnVal("Rapento.Properties.Settings.Database1ConnectionString")))
-            {
-                var output = connection.Query<Individual>($"SELECT * FROM dbo.Individuals").ToList();
-                return output;
-            }
-        }
 
         public void AddIndividual(string genus, string species, string collection)
         {

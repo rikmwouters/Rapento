@@ -4,7 +4,7 @@ using System;
 
 namespace Rapento
 {
-    class Individual
+    public class Individual
     {
         public string GivenGenusName { get; set; }
         public string GivenSpeciesName { get; set; }
