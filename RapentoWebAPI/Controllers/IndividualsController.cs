@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Web.Http;
+using Newtonsoft.Json;
 using Rapento;
 
 namespace RapentoWebAPI.Controllers
@@ -12,14 +13,18 @@ namespace RapentoWebAPI.Controllers
     {
 
         // GET: api/Individuals
+        [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "value1", "value3" };
         }
 
-        // GET: api/Individuals/5
-        public HttpResponseMessage Get(string taxonname)
+        // POST: api/Individuals/5
+        [HttpPost]
+        public HttpResponseMessage Post([FromBody]TaxonName taxonname)
         {
+            //string taxonname = JsonConvert.DeserializeObject<dynamic>(input).taxonname;
+
             try
             {
                 if (ModelState.IsValid)
@@ -28,9 +33,9 @@ namespace RapentoWebAPI.Controllers
                     return new HttpResponseMessage()
                     {
                         Content = new StringContent(
-                        data.FindTaxonID(taxonname).ToString(),
+                        data.FindTaxonID(taxonname.GivenTaxonName).ToString(),
                         Encoding.UTF8,
-                        "text/html"
+                        "application/json"
                         )
                     };
                 }
@@ -44,29 +49,6 @@ namespace RapentoWebAPI.Controllers
             catch
             {
                 return new HttpResponseMessage(HttpStatusCode.NotFound);
-            }
-        }
-
-        // POST: api/Individuals
-        public IHttpActionResult Post([FromBody]string genus, [FromBody]string species, [FromBody]string collection)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    DataAccess data = new DataAccess();
-                    data.AddIndividual(genus, species, collection);
-
-                    return Ok("Successfully added.");
-                }
-                else
-                {
-                    return BadRequest("Something went wrong.");
-                }
-            }
-            catch(Exception ex)
-            {
-                return BadRequest(ex.Message.ToString());
             }
         }
 
