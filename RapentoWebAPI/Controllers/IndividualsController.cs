@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
 using Rapento;
+using Rapento.Models;
 
 namespace RapentoWebAPI.Controllers
 {

@@ -82,11 +82,11 @@
       <DependentUpon>FindTaxonIDWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
-    <Compile Include="Individual.cs" />
+    <Compile Include="Models\Individual.cs" />
     <Compile Include="SpeciesInputWindow.xaml.cs">
       <DependentUpon>SpeciesInputWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Taxon.cs" />
+    <Compile Include="Models\Taxon.cs" />
     <Page Include="FindTaxonIDWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

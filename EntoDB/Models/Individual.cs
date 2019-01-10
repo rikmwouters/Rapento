@@ -1,8 +1,6 @@
-﻿
+﻿using System;
 
-using System;
-
-namespace Rapento
+namespace Rapento.Models
 {
     public class Individual
     {

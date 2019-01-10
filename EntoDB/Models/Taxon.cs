@@ -1,4 +1,4 @@
-﻿namespace Rapento
+﻿namespace Rapento.Models
 {
     public class Taxon
     {
