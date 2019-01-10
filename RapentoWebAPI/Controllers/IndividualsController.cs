@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Web.Http;
-using Newtonsoft.Json;
 using Rapento;
+using RapentoWebAPI.Models;
 
 namespace RapentoWebAPI.Controllers
 {
@@ -19,37 +15,13 @@ namespace RapentoWebAPI.Controllers
             return new string[] { "value1", "value3" };
         }
 
-        // POST: api/Individuals/5
+        // POST: api/Individuals/{id}
         [HttpPost]
-        public HttpResponseMessage Post([FromBody]TaxonName taxonname)
+        public string IndividualPost(string id, [FromBody]IndividualInput input)
         {
-            //string taxonname = JsonConvert.DeserializeObject<dynamic>(input).taxonname;
-
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    DataAccess data = new DataAccess();
-                    return new HttpResponseMessage()
-                    {
-                        Content = new StringContent(
-                        data.FindTaxonID(taxonname.GivenTaxonName).ToString(),
-                        Encoding.UTF8,
-                        "application/json"
-                        )
-                    };
-                }
-                else
-                {
-                    HttpResponseMessage response =
-                        this.Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Something went wrong.");
-                    throw new HttpResponseException(response);
-                }
-            }
-            catch
-            {
-                return new HttpResponseMessage(HttpStatusCode.NotFound);
-            }
+            DataAccess data = new DataAccess();
+            int result = data.FindTaxonID(input.GivenTaxonName);
+            return id + ". Het nummer van dit taxon is: " + result.ToString();
         }
 
         // PUT: api/Individuals/5
