@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rapento", "EntoDB\Rapento.c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapentoWebAPI", "RapentoWebAPI\RapentoWebAPI.csproj", "{6FD2B57D-6C38-4C17-8FCD-8756AAE74FD3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapentoRemote", "RapentoRemote\RapentoRemote.csproj", "{730427E7-7CFC-47DE-8664-93E0804CF075}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6FD2B57D-6C38-4C17-8FCD-8756AAE74FD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FD2B57D-6C38-4C17-8FCD-8756AAE74FD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FD2B57D-6C38-4C17-8FCD-8756AAE74FD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{730427E7-7CFC-47DE-8664-93E0804CF075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{730427E7-7CFC-47DE-8664-93E0804CF075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{730427E7-7CFC-47DE-8664-93E0804CF075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{730427E7-7CFC-47DE-8664-93E0804CF075}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
