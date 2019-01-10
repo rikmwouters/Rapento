@@ -15,13 +15,11 @@ namespace RapentoWebAPI.Controllers
             return new string[] { "value1", "value3" };
         }
 
-        // POST: api/Individuals/{id}
         [HttpPost]
-        public string IndividualPost(string id, [FromBody]IndividualInput input)
+        public void AddIndividual([FromBody]Individual input)
         {
             DataAccess data = new DataAccess();
-            int result = data.FindTaxonID(input.GivenTaxonName);
-            return id + ". Het nummer van dit taxon is: " + result.ToString();
+            data.AddIndividual(input);
         }
 
         // PUT: api/Individuals/5

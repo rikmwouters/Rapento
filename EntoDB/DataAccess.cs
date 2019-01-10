@@ -19,6 +19,16 @@ namespace Rapento
             }
         }
 
+        public void AddIndividual(Individual individual)
+        {
+            using (IDbConnection connection = new SqlConnection(connectionString: Helper.CnnVal("Rapento.Properties.Settings.Database1ConnectionString")))
+            {
+                List<Individual> individualList = new List<Individual>();
+                individualList.Add(individual);
+                connection.Execute("dbo.AddIndividual @GivenGenusName = @GivenGenusName, @GivenSpeciesName = @GivenSpeciesName, @GivenCollectionName = @GivenCollectionName", individual);
+            }
+        }
+
         public int FindTaxonID(string taxonname)
         {
             using (IDbConnection connection = new SqlConnection(connectionString: Helper.CnnVal("Rapento.Properties.Settings.Database1ConnectionString")))

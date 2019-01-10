@@ -2,7 +2,7 @@
 
 namespace RapentoWebAPI.Models
 {
-    public class IndividualInput
+    public class FindTaxonIDInput
     {
         public string GivenTaxonName { get; set; }
     }
