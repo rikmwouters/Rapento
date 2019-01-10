@@ -28,7 +28,13 @@ namespace Rapento
         private void SpecimenInputSubmitButton_Click(object sender, RoutedEventArgs e)
         {
             DataAccess data = new DataAccess();
-            data.AddIndividual(GenusBox.Text, SpeciesBox.Text, CollectionBox.Text);
+            Individual individual = new Individual
+            {
+                GivenGenusName = GenusBox.Text,
+                GivenSpeciesName = SpeciesBox.Text,
+                GivenCollectionName = CollectionBox.Text
+            };
+            data.AddIndividual(individual);
 
             GenusBox.Text = "";
             SpeciesBox.Text = "";

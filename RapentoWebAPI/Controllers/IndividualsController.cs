@@ -30,6 +30,8 @@ namespace RapentoWebAPI.Controllers
         // DELETE: api/Individuals/5
         public void Delete(int id)
         {
+            DataAccess data = new DataAccess();
+            data.DeleteIndividual(id);
         }
     }
 }

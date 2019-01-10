@@ -9,23 +9,13 @@ namespace Rapento
     public class DataAccess
     {
 
-        public void AddIndividual(string genus, string species, string collection)
-        {
-            using (IDbConnection connection = new SqlConnection(connectionString: Helper.CnnVal("Rapento.Properties.Settings.Database1ConnectionString")))
-            {
-                List<Individual> individual = new List<Individual>();
-                individual.Add(new Individual { GivenGenusName = genus, GivenSpeciesName = species, GivenCollectionName = collection });
-                connection.Execute("dbo.AddIndividual @GivenGenusName = @GivenGenusName, @GivenSpeciesName = @GivenSpeciesName, @GivenCollectionName = @GivenCollectionName", individual);
-            }
-        }
-
         public void AddIndividual(Individual individual)
         {
             using (IDbConnection connection = new SqlConnection(connectionString: Helper.CnnVal("Rapento.Properties.Settings.Database1ConnectionString")))
             {
                 List<Individual> individualList = new List<Individual>();
                 individualList.Add(individual);
-                connection.Execute("dbo.AddIndividual @GivenGenusName = @GivenGenusName, @GivenSpeciesName = @GivenSpeciesName, @GivenCollectionName = @GivenCollectionName", individual);
+                connection.Execute("dbo.AddIndividual @GivenGenusName = @GivenGenusName, @GivenSpeciesName = @GivenSpeciesName, @GivenCollectionName = @GivenCollectionName", individualList);
             }
         }
 
@@ -35,6 +25,16 @@ namespace Rapento
             {
                 var output = connection.Query<int>("dbo.FindTaxonID @GivenTaxonName", new { GivenTaxonName = taxonname }).ToList();
                 return output.First<int>();
+            }
+        }
+
+        public void DeleteIndividual(int individualID)
+        {
+            using (IDbConnection connection = new SqlConnection(connectionString: Helper.CnnVal("Rapento.Properties.Settings.Database1ConnectionString")))
+            {
+                List<Individual> individualList = new List<Individual>();
+                individualList.Add(new Individual { GivenIndividualID = individualID});
+                connection.Execute("dbo.DeleteIndividual @GivenIndividualID", individualList);
             }
         }
     }

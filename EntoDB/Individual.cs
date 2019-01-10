@@ -17,5 +17,6 @@ namespace Rapento
         public DateTime GivenSamplingDate { get; set; }
         public string GivenPhysicalSpecimenID { get; set; }
         public string GivenCollectionName { get; set; }
+        public int GivenIndividualID { get; set; }
     }
 }
