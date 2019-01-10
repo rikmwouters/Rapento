@@ -86,6 +86,7 @@
     <Compile Include="SpeciesInputWindow.xaml.cs">
       <DependentUpon>SpeciesInputWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Taxon.cs" />
     <Page Include="FindTaxonIDWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
