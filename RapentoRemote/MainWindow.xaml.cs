@@ -24,5 +24,10 @@ namespace RapentoRemote
                 FindTaxonIDResult.Text = response.ToString();
             }
         }
+
+        private void ViewImagesButton_Click(object sender, RoutedEventArgs e)
+        {
+            new ImagesWindow().Show();
+        }
     }
 }

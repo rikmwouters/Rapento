@@ -1,16 +1,16 @@
-﻿<Window x:Class="RapentoRemote.MainWindow"
+﻿<Window x:Class="RapentoRemote.ImagesWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RapentoRemote"
         mc:Ignorable="d"
-        Title="Rapento Remote" Height="450" Width="800">
+        Title="ImagesWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
@@ -26,14 +26,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-
-        <TextBlock Grid.Column="1" Grid.Row="1" Text="Taxon name: "/>
-        <TextBox x:Name="TaxonNameBox" Grid.Column="2" Grid.Row="1"/>
-        <Button x:Name="FindTaxonIDButton" Grid.Column="3" Grid.Row="1" 
-                Click="FindTaxonIDButton_Click" Content="Find TaxonID"/>
-        <TextBlock x:Name="FindTaxonIDResult" Grid.Column="1" Grid.Row="2" Text="{Binding}"/>
-
-        <Button x:Name="ViewImagesButton" Grid.Column="1" Grid.Row="3" 
-                Content="View images" Click="ViewImagesButton_Click"/>
+        
+        
     </Grid>
 </Window>
